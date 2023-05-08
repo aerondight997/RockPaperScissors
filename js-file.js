@@ -6,10 +6,11 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
-    if (playerChoice.toLowerCase() === "Rock" && computerChoice === "Paper") {
-        return "You lose! Paper beats Rock."
-    }
-    else if (playerChoice.toLowerCase() === "Paper" && computerChoice === "Rock") {
-        return "You win! Paper beats Rock."
-    }  
+    
+
 }
+
+
+const playerChoice = "Rock";
+const computerChoice = getComputerChoice();
+console.log(playRound(playerChoice, computerChoice));
