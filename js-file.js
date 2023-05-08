@@ -1,4 +1,4 @@
-const choices = ["rock", "paper", "scissors"];
+const choices = ['rock', 'paper', 'scissors'];
 
 let winningMessage = "";
 
@@ -14,25 +14,25 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection == "paper" && computerSelection == "rock") || 
         (playerSelection == "scissors" && computerSelection == "paper")) {
         
-           winningMessage = "You won! ${playerSelection} beats ${computerSelection}";
+           winningMessage = `You won! ${playerSelection} beats ${computerSelection}.`;
 
          }
      if ((computerSelection == "rock" && playerSelection == "scissors") ||
         (computerSelection == "paper" && playerSelection == "rock") ||
         (computerSelection == "scissors" && playerSelection == "paper")) {
 
-           winningMessage = "You lost! ${computerSelection} beats ${playerSelection}";
+           winningMessage = `You won! ${computerSelection} beats ${playerSelection}.`;
 
          }
      if (playerSelection == computerSelection) {
 
-        winningMessage = "It's tied! Try again!";
+        winningMessage = 'Its tied! Try again!';
      }
-  return winningMessage;        
+   return winningMessage;  
 }
 
 const computerSelection = getComputerChoice();
-const playerSelection = "rock";
+const playerSelection = "scissors";
 console.log(playRound(playerSelection, computerSelection));
 
 
