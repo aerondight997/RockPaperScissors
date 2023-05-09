@@ -14,12 +14,20 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
+     let tryAgain = prompt("Tied! Try again!");
+
+     if (playerSelection == computerSelection) {
+        
+        return tryAgain;
+    
+        }
      
      if ((playerSelection == "rock" && computerSelection == "scissors") ||
          (playerSelection == "paper" && computerSelection == "rock") || 
          (playerSelection == "scissors" && computerSelection == "paper")) {
         
            winningMessage = `You won! ${playerSelection} beats ${computerSelection}.`;
+           scorePlayer++;
 
          }
      if ((computerSelection == "rock" && playerSelection == "scissors") ||
@@ -27,39 +35,34 @@ function playRound(playerSelection, computerSelection) {
          (computerSelection == "scissors" && playerSelection == "paper")) {
 
            winningMessage = `You lost! ${computerSelection} beats ${playerSelection}.`;
+           scoreComputer++;
+
          }
-     if (playerSelection == computerSelection) {
-
-           winningMessage = 'Its tied! Try again!';
-
-     }
  return winningMessage;  
 }
 
 function game() {
-    
     let scoreCount;
-
-    for(scoreCount = 0; scoreCount <= 4; scoreCount++) {
-        playRound(playerSelection, computerSelection); 
-        
-        if(winningMessage = `You won! ${playerSelection} beats ${computerSelection}.`) {
-               
-               scorePlayer++;
-
-        } else if 
-          (winningMessage = `You lost! ${computerSelection} beats ${playerSelection}.`) {
-               
-               scoreComputer++;
-
-        } else if 
-          (winningMessage = 'Its tied! Try again!') {
-            
-            playRound(playerSelection, computerSelection); 
-
-        }
-    }
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     if (scorePlayer == 5) {
         
       winner = "Human is victorious! Computer is done for!";
@@ -73,6 +76,5 @@ function game() {
 }
 
 console.log(playRound(playerSelection, computerSelection));
-console.log(game());
 console.log(scorePlayer);
 console.log(scoreComputer);
