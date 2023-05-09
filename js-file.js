@@ -1,11 +1,11 @@
 const choices = ['rock', 'paper', 'scissors'];
 
 let winningMessage = "";
-let winner = '';
-let playerSelection = prompt("Which sign do you choose?");
-let computerSelection = getComputerChoice();
+let winner = "";
 let scorePlayer;
 let scoreComputer;
+const playerSelection = prompt("Which sign do you choose?");
+const computerSelection = getComputerChoice();
 
 function getComputerChoice() {
     
@@ -27,11 +27,10 @@ function playRound(playerSelection, computerSelection) {
          (computerSelection == "scissors" && playerSelection == "paper")) {
 
            winningMessage = `You won! ${computerSelection} beats ${playerSelection}.`;
-
          }
      if (playerSelection == computerSelection) {
 
-        winningMessage = 'Its tied! Try again!';
+           winningMessage = 'Its tied! Try again!';
 
      }
  return winningMessage;  
@@ -70,11 +69,8 @@ function game() {
 
          winner = "Computer has won! Human runs in fear!";
 
-       }
-  return winner;     
+    }
+ return winner;     
 }
-
-
-console.log(game());
 
 
