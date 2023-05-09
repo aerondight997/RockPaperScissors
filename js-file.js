@@ -1,6 +1,11 @@
 const choices = ['rock', 'paper', 'scissors'];
 
 let winningMessage = "";
+let winner = '';
+let playerSelection = prompt("Which sign do you choose?");
+let computerSelection = getComputerChoice();
+let scorePlayer;
+let scoreComputer;
 
 function getComputerChoice() {
     
@@ -10,8 +15,6 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
      
-    playerSelection = playerSelection.toLowerCase();
-    
      if ((playerSelection == "rock" && computerSelection == "scissors") ||
          (playerSelection == "paper" && computerSelection == "rock") || 
          (playerSelection == "scissors" && computerSelection == "paper")) {
@@ -36,11 +39,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     
-    let userInput = prompt();
-    let scoreCount = 0;
-    let winner = '';
-    let scorePlayer = 0;
-    let scoreComputer = 0;
+    let scoreCount;
 
     for(scoreCount = 0; scoreCount <= 5; scoreCount++) {
         playRound(playerSelection, computerSelection); 
@@ -58,7 +57,7 @@ function game() {
           (winningMessage = 'Its tied! Try again!') {
             
             playRound(playerSelection, computerSelection); 
-            
+
         }
     }
 
@@ -72,9 +71,10 @@ function game() {
          winner = "Computer has won! Human runs in fear!";
 
        }
+  return winner;     
 }
 
 
-
+console.log(game());
 
 
