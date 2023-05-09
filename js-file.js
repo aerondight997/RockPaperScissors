@@ -3,23 +3,25 @@ const choices = ['rock', 'paper', 'scissors'];
 let winningMessage = "";
 
 function getComputerChoice() {
+    
     randomChoice = choices[Math.floor(Math.random() * choices.length)];
     return randomChoice;
 }
 
 function playRound(playerSelection, computerSelection) {
+     
     playerSelection = playerSelection.toLowerCase();
     
      if ((playerSelection == "rock" && computerSelection == "scissors") ||
-        (playerSelection == "paper" && computerSelection == "rock") || 
-        (playerSelection == "scissors" && computerSelection == "paper")) {
+         (playerSelection == "paper" && computerSelection == "rock") || 
+         (playerSelection == "scissors" && computerSelection == "paper")) {
         
            winningMessage = `You won! ${playerSelection} beats ${computerSelection}.`;
 
          }
      if ((computerSelection == "rock" && playerSelection == "scissors") ||
-        (computerSelection == "paper" && playerSelection == "rock") ||
-        (computerSelection == "scissors" && playerSelection == "paper")) {
+         (computerSelection == "paper" && playerSelection == "rock") ||
+         (computerSelection == "scissors" && playerSelection == "paper")) {
 
            winningMessage = `You won! ${computerSelection} beats ${playerSelection}.`;
 
@@ -27,13 +29,32 @@ function playRound(playerSelection, computerSelection) {
      if (playerSelection == computerSelection) {
 
         winningMessage = 'Its tied! Try again!';
+
      }
-   return winningMessage;  
+ return winningMessage;  
 }
 
-const computerSelection = getComputerChoice();
-const playerSelection = "scissors";
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+    
+    let userInput = prompt();
+    let scoreCount;
+    let winner = '';
+    let scorePlayer;
+    let scoreComputer;
+
+    for(scoreCount = 0; scoreCount <= 5; scoreCount++) {
+        playRound(playerSelection, computerSelection) 
+        
+        if(winningMessage = `You won! ${playerSelection} beats ${computerSelection}.`) {
+               scorePlayer++
+        } else if (winningMessage = `You won! ${computerSelection} beats ${playerSelection}.`) {
+               scoreComputer++;
+        }
+
+    }
+}
+
+
 
 
 
