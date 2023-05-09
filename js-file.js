@@ -40,7 +40,7 @@ function game() {
     
     let scoreCount;
 
-    for(scoreCount = 0; scoreCount <= 5; scoreCount++) {
+    for(scoreCount = 0; scoreCount <= 4; scoreCount++) {
         playRound(playerSelection, computerSelection); 
         
         if(winningMessage = `You won! ${playerSelection} beats ${computerSelection}.`) {
@@ -48,7 +48,7 @@ function game() {
                scorePlayer++;
 
         } else if 
-          (winningMessage = `You won! ${computerSelection} beats ${playerSelection}.`) {
+          (winningMessage = `You lost! ${computerSelection} beats ${playerSelection}.`) {
                
                scoreComputer++;
 
@@ -63,7 +63,7 @@ function game() {
     if (scorePlayer == 5) {
         
       winner = "Human is victorious! Computer is done for!";
-      
+
     } else if (scoreComputer == 5) {
          
       winner = "Computer has won! Human runs in fear!";
