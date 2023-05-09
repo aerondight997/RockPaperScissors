@@ -4,6 +4,10 @@ let winningMessage = "";
 let winner = "";
 let scorePlayer = 0;
 let scoreComputer = 0;
+
+let scoreCountPlayer = `Player score: ${scorePlayer}`;
+let scoreCountComputer = `Computer score: ${scoreComputer}`;
+
 const playerSelection = prompt("Which sign do you choose?");
 const computerSelection = getComputerChoice();
 
@@ -42,27 +46,15 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    let scoreCount;
+
     
+  do {
     
+     playRound(playerSelection, computerSelection);
+
+  } while(scorePlayer < 5 && scoreComputer < 5); 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
     if (scorePlayer == 5) {
         
       winner = "Human is victorious! Computer is done for!";
