@@ -17,12 +17,13 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {    
       
-     if ((playerSelection == "rock" && computerSelection == "scissors") ||
+      if ((playerSelection == "rock" && computerSelection == "scissors") ||
          (playerSelection == "paper" && computerSelection == "rock") || 
          (playerSelection == "scissors" && computerSelection == "paper")) {
         
            winningMessage = `You won! ${playerSelection} beats ${computerSelection}.`;
-           scorePlayer++;
+           playerScore++;
+          
          } else if 
          
          ((computerSelection == "rock" && playerSelection == "scissors") ||
@@ -30,40 +31,20 @@ function playRound(playerSelection, computerSelection) {
          (computerSelection == "scissors" && playerSelection == "paper")) {
 
            winningMessage = `You lost! ${computerSelection} beats ${playerSelection}.`;
-           scoreComputer++;
-
+           computerScore++;
+           
          }
  return winningMessage;
-        }  
+}  
 
 
 function game() {
   
   for(let rounds = 1; rounds <= 5; rounds++) {
-     
-
-
-
-
-
-
-  }
-
-
-
-
-
-  
-    if (scorePlayer == 5) {
-        
-      winner = "Human is victorious! Computer is done for!";
-
-    } else if (scoreComputer == 5) {
-         
-      winner = "Computer has won! Human runs in fear!";
-
-    }
- return winner;     
+    
+    playRound(playerSelection, computerSelection);
+    
+  } 
 }
 
 console.log(scorePlayer);
