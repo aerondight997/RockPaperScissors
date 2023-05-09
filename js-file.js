@@ -60,11 +60,13 @@ function game() {
         }
     }
 
-    if (scorePlayer == 5){
+    if (scorePlayer == 5) {
         
-        winner = "Human is victorious! Computer is done for!";
-        6
-         winner = "Computer has won! Human runs in fear!";
+      winner = "Human is victorious! Computer is done for!";
+      
+    } else if (scoreComputer == 5) {
+         
+      winner = "Computer has won! Human runs in fear!";
 
     }
  return winner;     
