@@ -52,7 +52,7 @@ function game() {
     
      playRound(playerSelection, computerSelection);
 
-  } while(scorePlayer < 5 && scoreComputer < 5); 
+  } while(scorePlayer <= 5 && scoreComputer <= 5); 
     
   
     if (scorePlayer == 5) {
