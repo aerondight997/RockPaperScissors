@@ -2,8 +2,8 @@ const choices = ['rock', 'paper', 'scissors'];
 
 let winningMessage = "";
 let winner = "";
-let scorePlayer;
-let scoreComputer;
+let scorePlayer = 0;
+let scoreComputer = 0;
 const playerSelection = prompt("Which sign do you choose?");
 const computerSelection = getComputerChoice();
 
@@ -26,7 +26,7 @@ function playRound(playerSelection, computerSelection) {
          (computerSelection == "paper" && playerSelection == "rock") ||
          (computerSelection == "scissors" && playerSelection == "paper")) {
 
-           winningMessage = `You won! ${computerSelection} beats ${playerSelection}.`;
+           winningMessage = `You lost! ${computerSelection} beats ${playerSelection}.`;
          }
      if (playerSelection == computerSelection) {
 
@@ -60,17 +60,17 @@ function game() {
         }
     }
 
-    if (scorePlayer === 5){
+    if (scorePlayer == 5){
         
         winner = "Human is victorious! Computer is done for!";
-
-    } else if 
-       (scoreComputer === 5) {
-
+        6
          winner = "Computer has won! Human runs in fear!";
 
     }
  return winner;     
 }
 
-
+console.log(playRound(playerSelection, computerSelection));
+console.log(game());
+console.log(scorePlayer);
+console.log(scoreComputer);
