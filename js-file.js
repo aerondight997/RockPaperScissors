@@ -1,6 +1,6 @@
 const choices = ['rock', 'paper', 'scissors'];
 
-let result;
+let result = 0;
 let playerScore = 0;
 let computerScore = 0;
 let tiedScore = 0;
@@ -25,15 +25,15 @@ function playRound(playerSelection, computerSelection) {
           (computerSelection == "paper" && playerSelection == "rock") ||
           (computerSelection == "scissors" && playerSelection == "paper")) {
 
-           result = computerScore++;
-           
-         } else if
+            result = computerScore++;
+
+         } else if 
          
          ((computerSelection == "rock" && playerSelection == "rock") ||
           (computerSelection == "paper" && playerSelection == "paper") ||
           (computerSelection == "scissors" && playerSelection == "scissors")) {
-
-           result = tiedScore++;
+            
+            result = tiedScore++;
 
           }
 
