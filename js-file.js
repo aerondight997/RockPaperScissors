@@ -1,13 +1,11 @@
 const choices = ['rock', 'paper', 'scissors'];
 
 let winningMessage = "";
-let winner = "";
-let scorePlayer = 0;
-let scoreComputer = 0;
+let playerScore = 0;
+let computerScore = 0;
 
 
-const playerSelection = prompt("Which sign do you choose?");
-const computerSelection = getComputerChoice();
+
 
 function getComputerChoice() {
     
@@ -15,11 +13,11 @@ function getComputerChoice() {
     return randomChoice;
 }
 
-function playRound(playerSelection, computerSelection) {    
+function playRound(playerSelection, computerSelection) {  
       
       if ((playerSelection == "rock" && computerSelection == "scissors") ||
-         (playerSelection == "paper" && computerSelection == "rock") || 
-         (playerSelection == "scissors" && computerSelection == "paper")) {
+          (playerSelection == "paper" && computerSelection == "rock") || 
+          (playerSelection == "scissors" && computerSelection == "paper")) {
         
            winningMessage = `You won! ${playerSelection} beats ${computerSelection}.`;
            playerScore++;
@@ -27,8 +25,8 @@ function playRound(playerSelection, computerSelection) {
          } else if 
          
          ((computerSelection == "rock" && playerSelection == "scissors") ||
-         (computerSelection == "paper" && playerSelection == "rock") ||
-         (computerSelection == "scissors" && playerSelection == "paper")) {
+          (computerSelection == "paper" && playerSelection == "rock") ||
+          (computerSelection == "scissors" && playerSelection == "paper")) {
 
            winningMessage = `You lost! ${computerSelection} beats ${playerSelection}.`;
            computerScore++;
@@ -40,14 +38,14 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   
-  for(let rounds = 1; rounds <= 5; rounds++) {
-    
-    playRound(playerSelection, computerSelection);
+  for(let rounds = 0; rounds < 5; rounds++) {
+    const playerSelection = prompt("Which sign do you choose?");
+    const computerSelection = getComputerChoice();  
+    let roundResult = playRound(playerSelection, computerSelection);
+
     
   } 
 }
 
-console.log(scorePlayer);
-console.log(scoreComputer);
 console.log(game());
 
