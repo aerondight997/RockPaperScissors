@@ -1,4 +1,9 @@
 const choices = ['rock', 'paper', 'scissors'];
+let playerScore = 0;
+let computerScore = 0;
+let tieCounter = 0;
+let matchResult = 0;
+
 
 function getComputerChoice() {
     
@@ -6,18 +11,14 @@ function getComputerChoice() {
     return randomChoice;
 }
 
-function playRound(playerSelection, computerSelection) {  
-      let playerScore = 0;
-      let computerScore = 0;
+function playRound(playerSelection, computerSelection) { 
 
       if ((playerSelection == "rock" && computerSelection == "scissors") ||
           (playerSelection == "paper" && computerSelection == "rock") || 
           (playerSelection == "scissors" && computerSelection == "paper")) {
         
-           return playerScore++;
-           console.log(`Player score: ${playerScore}`);
-
-          
+          return playerScore++;
+           
          } else if 
          
          ((computerSelection == "rock" && playerSelection == "scissors") ||
@@ -25,7 +26,6 @@ function playRound(playerSelection, computerSelection) {
           (computerSelection == "scissors" && playerSelection == "paper")) {
 
             return computerScore++;
-            console.log(`Computer score: ${computerScore}`);
 
          } else if 
          
@@ -33,20 +33,10 @@ function playRound(playerSelection, computerSelection) {
           (computerSelection == "paper" && playerSelection == "paper") ||
           (computerSelection == "scissors" && playerSelection == "scissors")) {
             
-            return playAgain();
+            return tieCounter++;
 
           }
-
- return;
 }  
-
-function playAgain() {
-  const playerSelection = prompt("Which sign do you choose?");
-  const computerSelection = getComputerChoice();  
-  return playRound(playerSelection, computerSelection);
-}
-
-
 
 
 function game() {
@@ -55,7 +45,19 @@ function game() {
     const playerSelection = prompt("Which sign do you choose?");
     const computerSelection = getComputerChoice();  
     let roundResult = playRound(playerSelection, computerSelection);
-  } 
+  }
+  
+  if (playerScore > computerScore) {
+     
+     matchResult = "You won! Player beats the computer!";
+
+  } else if
+     (computerScore > playerScore) {
+
+     matchResult = "Computer wins! You lost!" 
+
+     }
+ return matchResult;        
 }
 
 console.log(game());
