@@ -1,10 +1,5 @@
 const choices = ['rock', 'paper', 'scissors'];
 
-let result = 0;
-let playerScore = 0;
-let computerScore = 0;
-let tiedScore = 0;
-
 function getComputerChoice() {
     
     randomChoice = choices[Math.floor(Math.random() * choices.length)];
@@ -12,12 +7,16 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {  
-      
+      let playerScore = 0;
+      let computerScore = 0;
+
       if ((playerSelection == "rock" && computerSelection == "scissors") ||
           (playerSelection == "paper" && computerSelection == "rock") || 
           (playerSelection == "scissors" && computerSelection == "paper")) {
         
-           result = playerScore++;
+           return playerScore++;
+           console.log(`Player score: ${playerScore}`);
+
           
          } else if 
          
@@ -25,7 +24,8 @@ function playRound(playerSelection, computerSelection) {
           (computerSelection == "paper" && playerSelection == "rock") ||
           (computerSelection == "scissors" && playerSelection == "paper")) {
 
-            result = computerScore++;
+            return computerScore++;
+            console.log(`Computer score: ${computerScore}`);
 
          } else if 
          
@@ -33,12 +33,20 @@ function playRound(playerSelection, computerSelection) {
           (computerSelection == "paper" && playerSelection == "paper") ||
           (computerSelection == "scissors" && playerSelection == "scissors")) {
             
-            result = tiedScore++;
+            return playAgain();
 
           }
 
- return result;
+ return;
 }  
+
+function playAgain() {
+  const playerSelection = prompt("Which sign do you choose?");
+  const computerSelection = getComputerChoice();  
+  return playRound(playerSelection, computerSelection);
+}
+
+
 
 
 function game() {
@@ -49,8 +57,6 @@ function game() {
     let roundResult = playRound(playerSelection, computerSelection);
   } 
 }
-console.log(`Player score: ${playerScore}`);
-console.log(`Computer score: ${computerScore}`);
-console.log(`Tied: ${tiedScore}`);
+
 console.log(game());
 
