@@ -1,11 +1,9 @@
 const choices = ['rock', 'paper', 'scissors'];
 
-let winningMessage = "";
+let result;
 let playerScore = 0;
 let computerScore = 0;
-
-
-
+let tiedScore = 0;
 
 function getComputerChoice() {
     
@@ -19,8 +17,7 @@ function playRound(playerSelection, computerSelection) {
           (playerSelection == "paper" && computerSelection == "rock") || 
           (playerSelection == "scissors" && computerSelection == "paper")) {
         
-           winningMessage = `You won! ${playerSelection} beats ${computerSelection}.`;
-           playerScore++;
+           result = playerScore++;
           
          } else if 
          
@@ -28,11 +25,19 @@ function playRound(playerSelection, computerSelection) {
           (computerSelection == "paper" && playerSelection == "rock") ||
           (computerSelection == "scissors" && playerSelection == "paper")) {
 
-           winningMessage = `You lost! ${computerSelection} beats ${playerSelection}.`;
-           computerScore++;
+           result = computerScore++;
            
-         }
- return winningMessage;
+         } else if
+         
+         ((computerSelection == "rock" && playerSelection == "rock") ||
+          (computerSelection == "paper" && playerSelection == "paper") ||
+          (computerSelection == "scissors" && playerSelection == "scissors")) {
+
+           result = tiedScore++;
+
+          }
+
+ return result;
 }  
 
 
@@ -42,10 +47,10 @@ function game() {
     const playerSelection = prompt("Which sign do you choose?");
     const computerSelection = getComputerChoice();  
     let roundResult = playRound(playerSelection, computerSelection);
-
-    
   } 
 }
-
+console.log(`Player score: ${playerScore}`);
+console.log(`Computer score: ${computerScore}`);
+console.log(`Tied: ${tiedScore}`);
 console.log(game());
 
