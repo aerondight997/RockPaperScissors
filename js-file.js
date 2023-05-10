@@ -35,7 +35,7 @@ function playRound(playerSelection, computerSelection) {
             
              return tieCounter++;
 
-          }
+         }
 }  
 
 
@@ -53,8 +53,6 @@ function game() {
     console.log(`Tie counts: ${tieCounter}`);
   }
   
-  
-
   if (playerScore > computerScore) {
      
      matchResult = "You won! Player beats the computer!";
@@ -68,6 +66,7 @@ function game() {
      matchResult = "You are tied! Both of you SUCK!";
 
   } 
+
  return matchResult;        
 }
 
